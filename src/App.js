@@ -3,12 +3,12 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Outlet
 } from 'react-router-dom';
-import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import NavBar from './components/NavBar';
+import LandingPage from './containers/LandingPage';
+import { Container } from '@mui/material';
 
 const theme = createTheme({
   palette: {
@@ -29,16 +29,21 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme} sx={{
-      display: "flex",
-      flexDirection: "column"
-    }}>
-      <NavBar />
-      <Container>
-        <h1>Mitchell Woodin</h1>
-        <p>Portfolio Site</p>
-      </Container>
-    </ThemeProvider>
+    <div>
+      <ThemeProvider theme={theme} sx={{
+        align: "center",
+        bgcolor: "background.default",
+        // display: "flex",
+        // flexDirection: "column"
+      }}>
+          <NavBar />
+          <Router>
+            <Routes>
+              <Route path="/portfolio" element={<LandingPage />} />
+            </Routes>
+          </Router>
+      </ThemeProvider>
+    </div>
   );
 }
 

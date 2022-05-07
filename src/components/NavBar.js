@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,6 +10,7 @@ import Button from '@mui/material/Button';
 const NavBar = () => {  
   return (
     <React.Fragment>
+      <CssBaseline />
       <AppBar
         position="sticky"
         elevation={0}
@@ -21,7 +23,7 @@ const NavBar = () => {
               variant="button"
               underline="none"
               href="/"
-              sx={{ my: 1, mx: 1.5, color: "secondary.main" }}
+              sx={{ my: 1, mx: 1.5, color: "primary.contrastText" }}
             >
               <strong>Home</strong>
             </Link>
@@ -29,22 +31,19 @@ const NavBar = () => {
               variant="button"
               underline="none"
               href="/pricing"
-              sx={{ my: 1, mx: 1.5, color: "secondary.main" }}
+              sx={{ my: 1, mx: 1.5, color: "primary.contrastText" }}
             >
-              <strong>Pricing</strong>
+              <strong>About Me</strong>
             </Link>
             <Link
               variant="button"
               underline="none"
               href="/login"
-              sx={{ my: 1, mx: 1.5, color: "secondary.main" }}
+              sx={{ my: 1, mx: 1.5, color: "primary.contrastText" }}
             >
-              <strong>Login</strong>
+              <strong>Portfolio</strong>
             </Link>
           </nav>
-          <Button href="/register" variant="contained" sx={{ my: 1, mx: 1.5 }}>
-            <strong>Register</strong>
-          </Button>
         </Toolbar>
       </AppBar>
     </React.Fragment>
